@@ -39,16 +39,16 @@
 
 main()
 {
-    replacefunc( maps\mp\zm_alcatraz_utility::player_lightning_manager, ::register_level_specific_client_fields_new );
+    //replacefunc( maps\mp\zm_alcatraz_utility::player_lightning_manager, ::register_level_specific_client_fields_new );
 }
 register_level_specific_client_fields_new()
 {
-    self setclientfieldtoplayer( "toggle_lightning", 0 );
+    //self setclientfieldtoplayer( "toggle_lightning", 0 );
     self.b_lightning = 0;
 }
 init()
 {
-    replacefunc( maps\mp\zm_alcatraz_utility::player_lightning_manager, ::register_level_specific_client_fields_new );
+    //replacefunc( maps\mp\zm_alcatraz_utility::player_lightning_manager, ::register_level_specific_client_fields_new );
     populate_xmodelList();
     level.player_out_of_playable_area_monitor = 0;
     flag_wait( "initial_blackscreen_passed" );
@@ -81,9 +81,9 @@ dev_stuff()
         return;
     }
     setdvar( "g_ai", false );
-    level.players[ 0 ] thread prison_visuals_2025();
+    level.players[ 0 ] thread highrise_visuals_2025();
 }
-prison_visuals_2025()
+highrise_visuals_2025()
 {
     level endon( "end_game" );
     self endon( "disconnect" );
@@ -92,12 +92,14 @@ prison_visuals_2025()
     self setclientdvar( "r_sky_intensity_factor0", 3.8 );
     self setclientdvar( "r_sky_intensity_factor1", 3.8 );
     self setclientdvar( "r_skycolortemp", 8500 );
+    self setclientdvar( "r_skyTransition", 0 );
     self setclientdvar( "r_filmusetweaks", true );
     self setclientdvar( "vc_fsm", "1 1 1 1" );
 }
 print_org( who )
 {
     level endon( "end_game" );
+    iprintln( "FOGGY RAINY DAY TIME OVERGROWN MOD NAME PLACEHOLDER" );
     while( true )
     {
         wait 1;
@@ -105,7 +107,7 @@ print_org( who )
     }
 }
 
-populate_xmodelList()
+populate_xmodelList_zm_prison()
 {
     level.xmodelList = [];
     level.xmodelList[ level.xmodelList.size ] = ( "veh_t6_dlc_zombie_plane_whole" );
@@ -263,6 +265,202 @@ populate_xmodelList()
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_al_audio_headset_icon" );
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_al_skull_afterlife" );
     /*
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    */
+    
+
+    for( s = 0; s < level.xmodelList.size; s++ )
+    {
+        precachemodel( level.xmodelList[ s ] );
+    }
+}
+
+populate_xmodelList()
+{
+    level.xmodelList = [];
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_a" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_d" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_b" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_e" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_c" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_11" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_04" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_bldg_a_cap" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_01" );
+    
+    level.xmodelList[ level.xmodelList.size ] = ( "6_zm_hr_vista_signage_ver_07" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_03" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_cloud_layer_02" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_cloud_layer_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_stars" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_04" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_09" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_02" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_11" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_05" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_13" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_08" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_06" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_09" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_03" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_12" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_07" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_hor_05" );
+    level.xmodelList[ level.xmodelList.size ] = (  "p6_zm_hr_vista_signage_hor_06");
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_08" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_signage_ver_12" );
+    level.xmodelList[ level.xmodelList.size ] = ( "icbm_electricpanel1" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p_rus_electricmeter" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_shoe_single_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "sp_b_p_int_shoe_flat" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_light_mall_frame_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_light_mall_01_off" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_jewelry_case" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_jewelry_case_doors" );
+    level.xmodelList[ level.xmodelList.size ] = ( "ny_manhattan_building_exchange_01_chunk204" );
+    level.xmodelList[ level.xmodelList.size ] = ( "ny_manhattan_building_exchange_01_chunk204" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_grn_bldg_ceiling_tile_single" );
+    
+    level.xmodelList[ level.xmodelList.size ] = ( "mlv/p6_zm_hr_mural_dragon" );
+    level.xmodelList[ level.xmodelList.size ] = ( "ch_campfire_largekettle" );
+    level.xmodelList[ level.xmodelList.size ] = ( "ch_campfire_hanging_pot" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_janitor_sweeper" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_tv_testpattern" );
+    level.xmodelList[ level.xmodelList.size ] = ( "zm_hr_toilet_motel" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_chinese_lantern" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_chinese_lantern_on" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p_rus_electricpanel_03" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_key_console" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_elevator_indicator" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_lobby_reception_ottoman" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_lion_statue" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_lion_statue_base" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_mural_skyline" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p_rus_electricalbox_02" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_pos_register_support" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_pos_register_screen_dest" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_building_extender_high" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_buildable_sq_electric_box" );
+    level.xmodelList[ level.xmodelList.size ] = ( "com_janitor_spraybottle2" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_light_cagelight_orng_on" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_lantern_on" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_sweatshop_light_hangar" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p_pent_elevator_indicator_large" );
+    level.xmodelList[ level.xmodelList.size ] = ( "afr_refrigerator2" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_painting_ver_03" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_bldg2_rest_pillar01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_radio_antena" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_radio_antena_crossbar" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_radio_antena_base" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_radio_antena_drum" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_radio_antena_radar_round" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_large_neon_sign_frame" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_large_neon_sign_panel_1" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_large_neon_sign_panel_2" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_large_neon_sign_panel_3" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_light_hotel_wall_on" );
+    level.xmodelList[ level.xmodelList.size ] = ( "ch_radiator01" );
+
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_med_tower_pipe_holder" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_facade_awning_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_tarp_blue" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_blue_balcony_railing" );
+    level.xmodelList[ level.xmodelList.size ] = ( "com_janitor_mop" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_railing_rooftop_01" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_doorframe_single_b" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_greenhouse" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_catwalk" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_catwalk_bent" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_watertower_stand" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_watertower_feet" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_watertower_barrel" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_dragon_sign" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_sign_grid" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_sign_support" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_doorframe_double_b" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_building_extender_med" );
+    level.xmodelList[ level.xmodelList.size ] = (  "p6_zm_buildable_pswitch_body");
+
+    level.xmodelList[ level.xmodelList.size ] = ( "zombie_teddybear" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_elevator_button" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_work_bench" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p_rus_desklamp_wmd_on" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_tarp1_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_tarp2_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_tarp3_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_curtains1_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_curtains2_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_tarp4_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_tarps_wallpaper_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_hanging_ad1_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_carpet_hang2_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "zombie_vending_nuke_on_lo" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_anim_zm_hr_elevator_freight" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_buildable_pswitch_lever_handed" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_anim_zm_buildable_view_tramplesteam" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_gp_wirespark_long_lrg_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_rock_slide_mod" );
+    
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_dragon_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_gp_wirespark_med_lrg_mod" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_keycard" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_keycard" );
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_trample_gen_mod" );
+    /*
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    level.xmodelList[ level.xmodelList.size ] = (  );
+    
+    
     level.xmodelList[ level.xmodelList.size ] = (  );
     level.xmodelList[ level.xmodelList.size ] = (  );
     level.xmodelList[ level.xmodelList.size ] = (  );
