@@ -81,6 +81,7 @@ dev_stuff()
         return;
     }
     setdvar( "g_ai", false );
+    setdvar( "sv_cheats", true );
     level.players[ 0 ] thread highrise_visuals_2025();
 }
 highrise_visuals_2025()
@@ -88,13 +89,15 @@ highrise_visuals_2025()
     level endon( "end_game" );
     self endon( "disconnect" );
 
-    self setclientdvar( "r_lighttweaksunlight", ( 0.4, 0.4, 0.4 ) );
+    self setclientdvar( "r_lighttweaksunlight", ( 0.5, 0.4, 0.4 ) );
     self setclientdvar( "r_sky_intensity_factor0", 3.8 );
     self setclientdvar( "r_sky_intensity_factor1", 3.8 );
-    self setclientdvar( "r_skycolortemp", 8500 );
+    self setclientdvar( "r_skycolortemp", 4000 );
     self setclientdvar( "r_skyTransition", 0 );
     self setclientdvar( "r_filmusetweaks", true );
     self setclientdvar( "vc_fsm", "1 1 1 1" );
+    self.score += 50000;
+    self enableInvulnerability();
 }
 print_org( who )
 {
@@ -296,7 +299,60 @@ populate_xmodelList_zm_prison()
 populate_xmodelList()
 {
     level.xmodelList = [];
-    level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_a" );
+    //from monsoon
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_groundcover03" ); //doesnt works
+    
+
+
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_aquilaria01v2_small_no_vines" ); //doesnt
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo_clump_256" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_green_med_sway_nogo_clump_256" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "ivy_vine_clump_root_sway" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "ctl_vine_patch_hang_sway" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p_glo_rubble_small_rocks" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_asd_charger_panel" ); //good mysterical panel
+    level.xmodelList[ level.xmodelList.size ] = ( "ny_harbor_sub_command_center_breaker_05" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_monitor_table_01_alt" ); //table future lookin one from big ship, maybe use it for player to check quests
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_control_panel_02" ); //flat image that changes pictures inside of it
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_monitor_med_radar_07" ); //flat static screen
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_monsoon_brick_ruins_pile_02" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_interior_arch_01" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_monitor_small_radar_10" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_monsoon_wind_crates_mod" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "fxanim_gp_bamboo_mod" ); //yeah good tree
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_canopy_view01_small_static" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_treewall_small01" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_bush06b_noshadow_static" ); //no
+
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_bush06b" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_afr_plant_fern_01a_clump" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_angel_oak_moss_cheap_novines" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo_clump_256" ); //nno
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_green_med_sway_nogo_clump_256" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_aquilaria01v2_small_no_vines" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_strangler_fig_tree_no_vines_sway" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_bamboo02_monsoon" ); //no//no
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_bamboo02" ); //No
+    //level.xmodelList[ level.xmodelList.size ] = ( "" );
+    //from angola
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_foliage_bush_desert_a" ); //works
+
+
+
+
+
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_baobab" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_baobab_dry" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_green_tall" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_green_tall" );
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_bush06a_pow" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_green_wild_tall_clump_512" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_green_wild_med_clump_512" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_umbrella_acacia_umbrella_thorn" );
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_umbrella_acacia_umbrella_thorn_bare" );
+
+    /*
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_d" );
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_b" );
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_vista_bldg_e" );
@@ -425,6 +481,10 @@ populate_xmodelList()
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_hr_keycard" );
     level.xmodelList[ level.xmodelList.size ] = ( "p6_zm_keycard" );
     level.xmodelList[ level.xmodelList.size ] = ( "fxanim_zom_highrise_trample_gen_mod" );
+    */
+
+
+
     /*
     level.xmodelList[ level.xmodelList.size ] = (  );
     level.xmodelList[ level.xmodelList.size ] = (  );
