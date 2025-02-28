@@ -558,10 +558,27 @@ inspect_xmodels()
     wait 1;
     iprintln( "xmodel thread spawned" );
     wait 1;
-    iprintln( "ADS + USE = XMODEL LIST UP" );
+    iprintln( "ADS + ^9[{+activate}] = XMODEL LIST UP" );
     iprintln( "ADS + MELEE = XMODEL LIST DOWN" );
     iprintln( "USE + MELEE = XMODEL SETS  TAG_ORIGIN MODEL" );
     iprintln( "ADS + JUMP = SPAWN AND LEAVE THE MODEL IN MAP" );
+    wait 3;
+    iprintln( "==/ TEST BUTTON STRING GLYPH /== ");
+    wait 1;
+    iprintln( "^9[{+activate}] | USE BUTTON" );
+    iprintln( "^9[{+ads}] | ADS BUTTON" );
+    iprintln( "^9[{+attack}] | ATTACK BUTTON" );
+    iprintln( "^9[{+crouch}] | CROUCH BUTTON" );
+    wait 3;
+    iprintln( "^9[{+jump}] | JUMP BUTTON" );
+    iprintln( "^9[{+melee}] | KNIFE BUTTON" );
+    iprintln( "^9[{+grenade}] | GRENADE BUTTON" );
+    iprintln( "^9[{+tactical}] | TACTICAL BUTTON" );
+    wait 1;
+    iprintln( "^9[{+actionslot1}] | ACTION SLOT 1 BUTTON" );
+    
+    //implement removal of as well
+    iprintln( "USE + JUMP = DELETE PREVIOUSLY SPAWNED *FOREVER ENTITY*" );
     level.players[ 0 ] thread change_xmodel( mod );
 }
 change_xmodel( mod )
