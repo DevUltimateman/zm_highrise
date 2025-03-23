@@ -301,14 +301,31 @@ populate_xmodelList()
     level.xmodelList = [];
     //from monsoon
     level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_groundcover03" ); //doesnt works
-    
 
-
-    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_aquilaria01v2_small_no_vines" ); //doesnt
-    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo_clump_256" ); //no
-    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_green_med_sway_nogo_clump_256" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_monsoon_ext_elevator_rain_box" ); //doesnt
+    level.xmodelList[ level.xmodelList.size ] = ( "ivy_vine_clump_root" ); //no
     level.xmodelList[ level.xmodelList.size ] = ( "ivy_vine_clump_root_sway" ); //yes
-    level.xmodelList[ level.xmodelList.size ] = ( "ctl_vine_patch_hang_sway" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "p_glo_rock_cliff_foliage_pow03" ); //no
+    level.xmodelList[ level.xmodelList.size ] = ( "mlv/p6_rock_cliff_jungle_vista_03" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_bamboo02" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_bamboo02_monsoon" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_strangler_fig_tree_no_vines_sway" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_tree_aquilaria01v2_small_no_vines" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_green_med_sway_nogo_clump_256" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo_clump_256" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_tree_angel_oak_moss_cheap_novines" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_afr_plant_fern_01a_clump" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p6_grass_wild_mixed_med_sway_nogo" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_bush06b" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_shrubs01_static" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_treewall_large" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_treewall_small01" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_canopy_view01_small_static" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_aerial_view01" ); //yes
+    //level.xmodelList[ level.xmodelList.size ] = ( "" ); //yes
+    //level.xmodelList[ level.xmodelList.size ] = ( "" ); //yes
+    //level.xmodelList[ level.xmodelList.size ] = ( "" ); //yes
+    level.xmodelList[ level.xmodelList.size ] = ( "p_glo_rock_cliff_foliage_pow04" ); //no
     level.xmodelList[ level.xmodelList.size ] = ( "p_glo_rubble_small_rocks" ); //yes
     level.xmodelList[ level.xmodelList.size ] = ( "p6_asd_charger_panel" ); //good mysterical panel
     level.xmodelList[ level.xmodelList.size ] = ( "ny_harbor_sub_command_center_breaker_05" ); //no
