@@ -61,6 +61,20 @@ init()
     level.devmode = true;
     level thread connecting_players_thread();
     level thread dev_stuff();
+    level.perk_purchase_limit = 4;
+    level thread chang_perk_purchase_limit();
+}
+
+chang_perk_purchase_limit()
+{
+    level endon( "end_game" );
+    while( true )
+    {
+        level waittill( "between_round_over" );
+        if( level.round_number == 4 ) { level.perk_purchase_limit = 5; iprintln( "Perk limit has been increased to: " + level.perk_purchase_limit ); }
+        else if( level.round_number == 6 ) { level.perk_purchase_limit = 6; iprintln( "Perk limit has been increased to: " + level.perk_purchase_limit ); }
+        else if( level.round_number == 8 ) { level.perk_purchase_limit = 9; iprintln( "Perk limit has been increased to: " + level.perk_purchase_limit ); wait 1; break; }
+    }
 }
 
 connecting_players_thread()
@@ -300,7 +314,7 @@ populate_xmodelList()
 {
     level.xmodelList = [];
     //from monsoon
-    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_groundcover03" ); //doesnt works
+    level.xmodelList[ level.xmodelList.size ] = ( "t5_foliage_groundcover03" ); //doesnt worksPP
 
     level.xmodelList[ level.xmodelList.size ] = ( "p6_monsoon_ext_elevator_rain_box" ); //doesnt
     level.xmodelList[ level.xmodelList.size ] = ( "ivy_vine_clump_root" ); //no
